@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Mosagx</title>
   <subtitle>面向工资工程师</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://mosagx.github.io/blog/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2017-07-24T09:00:52.000Z</updated>
-  <id>https://mosagx.github.io/blog/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>Mosagx</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://mosagx.github.io/blog/2017/07/24/hello-world/"/>
-    <id>https://mosagx.github.io/blog/2017/07/24/hello-world/</id>
+    <link href="http://yoursite.com/2017/07/24/hello-world/"/>
+    <id>http://yoursite.com/2017/07/24/hello-world/</id>
     <published>2017-07-24T09:00:52.000Z</published>
     <updated>2017-07-24T09:00:52.000Z</updated>
     
