@@ -2,9 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2017/07/24/hello-world/</loc>
+    <loc>http://www.saway.cc/2017/07/26/%E5%85%B6%E5%AE%83/</loc>
     
-    <lastmod>2017-07-24T09:00:52.000Z</lastmod>
+    <lastmod>2017-07-26T07:22:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.saway.cc/2017/07/26/%E7%94%9F%E6%B4%BB/</loc>
+    
+    <lastmod>2017-07-26T04:24:56.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.saway.cc/2017/07/26/%E5%8D%87%E7%BA%A7PHP7/</loc>
+    
+    <lastmod>2017-07-26T04:24:03.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.saway.cc/2017/07/24/hello-world/</loc>
+    
+    <lastmod>2017-07-26T04:22:59.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.saway.cc/about/index.html</loc>
+    
+    <lastmod>2017-07-26T04:03:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.saway.cc/tags/index.html</loc>
+    
+    <lastmod>2017-07-26T04:03:32.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.saway.cc/2017/07/26/linux/</loc>
+    
+    <lastmod>2017-07-26T03:45:47.000Z</lastmod>
     
   </url>
   

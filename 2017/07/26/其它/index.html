@@ -7,15 +7,20 @@
   
   
   
-  <title>Mosagx blog</title>
+  <title>扒一扒我搭建Hexo的一些坑 | Mosagx blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Mosagx blog">
-<meta property="og:url" content="http://www.saway.cc/index.html">
+  <meta name="description" content="一. 先从环境搭建说起吧搭建模式为Hexo + GitHub Pages这里强调github pages 后面会提到这个坑本地操作系统是MacOSX的，windows平台类似，换汤不换药  先安装Node.js，便于后面的npm操作，教程网上一大堆，Mac下一行命令搞定，配环境变量也省了$ brew install node 然后安装Hexo，基于Node.js安装$ npm install -g">
+<meta name="keywords" content="杂记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="扒一扒我搭建Hexo的一些坑">
+<meta property="og:url" content="http://www.saway.cc/2017/07/26/其它/index.html">
 <meta property="og:site_name" content="Mosagx blog">
+<meta property="og:description" content="一. 先从环境搭建说起吧搭建模式为Hexo + GitHub Pages这里强调github pages 后面会提到这个坑本地操作系统是MacOSX的，windows平台类似，换汤不换药  先安装Node.js，便于后面的npm操作，教程网上一大堆，Mac下一行命令搞定，配环境变量也省了$ brew install node 然后安装Hexo，基于Node.js安装$ npm install -g">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-07-26T07:22:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mosagx blog">
+<meta name="twitter:title" content="扒一扒我搭建Hexo的一些坑">
+<meta name="twitter:description" content="一. 先从环境搭建说起吧搭建模式为Hexo + GitHub Pages这里强调github pages 后面会提到这个坑本地操作系统是MacOSX的，windows平台类似，换汤不换药  先安装Node.js，便于后面的npm操作，教程网上一大堆，Mac下一行命令搞定，配环境变量也省了$ brew install node 然后安装Hexo，基于Node.js安装$ npm install -g">
   
     <link rel="alternative" href="/atom.xml" title="Mosagx blog" type="application/atom+xml">
   
@@ -29,9 +34,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -42,8 +44,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -281,9 +283,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-其它" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-其它" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a  href="/2017/07/26/其它/" class="article-date">
@@ -300,13 +300,28 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2017/07/26/其它/">扒一扒我搭建Hexo的一些坑</a>
+    <h1 class="article-title" itemprop="name">
+      扒一扒我搭建Hexo的一些坑
     </h1>
   
 
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/other/">其它</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂记/">杂记</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -348,314 +363,149 @@ $ npm install hexo-generator-search --save
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/other/">其它</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂记/">杂记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/07/26/其它/">扒一扒我搭建Hexo的一些坑</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 Mosagx 的个人博客">Mosagx</a></p>
+        <p><span>发布时间:</span>2017年07月26日 - 12时17分</p>
+        <p><span>最后更新:</span>2017年07月26日 - 15时22分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/07/26/其它/" title="扒一扒我搭建Hexo的一些坑">http://www.saway.cc/2017/07/26/其它/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://www.saway.cc/2017/07/26/其它/　　作者: Mosagx" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a  href="/2017/07/26/生活/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">关于生活的一些态度</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-先从环境搭建说起吧"><span class="toc-number">1.</span> <span class="toc-text">一. 先从环境搭建说起吧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-连接远程仓库"><span class="toc-number">2.</span> <span class="toc-text">二. 连接远程仓库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-提交代码"><span class="toc-number">3.</span> <span class="toc-text">三. 提交代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-配置网页"><span class="toc-number">4.</span> <span class="toc-text">四. 配置网页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-绑定域名"><span class="toc-number">5.</span> <span class="toc-text">五. 绑定域名</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
 
 
 
 
-
-
-  
-    <article id="post-生活" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2017/07/26/生活/" class="article-date">
-      <time datetime="2017-07-26T04:17:28.000Z" itemprop="datePublished">2017-07-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
+        <section class="changyan" id="comments">
+  <!--<div id="uyan_frame"></div>-->
+  <div id="SOHUCS"></div>
+  <script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js"></script>
+  <script type="text/javascript">
+    window.changyan.api.config({
+      appid: 'xxxx',
+      conf: 'xxxxxxxxx'
+    });
+  </script>
+</section>
     
-    
-      <header class="article-header">
+
+
+
+    <div class="scroll" id="post-nav-button">
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2017/07/26/生活/">关于生活的一些态度</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h2 id="先就这样吧-以后再写"><a href="#先就这样吧-以后再写" class="headerlink" title="先就这样吧-以后再写"></a>先就这样吧-以后再写</h2>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/life/">生活</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/态度/">态度</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/杂记/">杂记</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-升级PHP7" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2017/07/26/升级PHP7/" class="article-date">
-      <time datetime="2017-07-26T04:14:50.000Z" itemprop="datePublished">2017-07-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2017/07/26/升级PHP7/">升级PHP7</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>1）更新yum源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm</div></pre></td></tr></table></figure></p>
-<p>2）卸载原有的PHP<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum remove php* php-common​</div></pre></td></tr></table></figure></p>
-<p>3）安装PHP7<br><strong>新版本具体看list里面的</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install php70w​</div><div class="line">yum install php70w-gd php70w-mbstring php70w-mysql</div></pre></td></tr></table></figure></p>
-<p>4）查看php信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">php -v</div><div class="line">PHP 7.0.10 (cli) (built: Aug 20 2016 08:13:48) ( NTS )</div><div class="line">Copyright (c) 1997-2016 The PHP Group</div><div class="line">Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/programming/">编程</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PHP/">PHP</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-linux" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2017/07/26/linux/" class="article-date">
-      <time datetime="2017-07-26T03:17:45.000Z" itemprop="datePublished">2017-07-26</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2017/07/26/linux/">简单的linux防火墙配置</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <h4 id="1、查看端口状态"><a href="#1、查看端口状态" class="headerlink" title="1、查看端口状态"></a>1、查看端口状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -tnl</div></pre></td></tr></table></figure>
-<h4 id="2、查看防火墙规则"><a href="#2、查看防火墙规则" class="headerlink" title="2、查看防火墙规则"></a>2、查看防火墙规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -L -n</div></pre></td></tr></table></figure>
-<h4 id="3、添加端口白名单"><a href="#3、添加端口白名单" class="headerlink" title="3、添加端口白名单"></a>3、添加端口白名单</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//以80端口为例</div><div class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</div><div class="line">iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT</div></pre></td></tr></table></figure>
-<h4 id="4、禁止除表中白名单以外的一切端口"><a href="#4、禁止除表中白名单以外的一切端口" class="headerlink" title="4、禁止除表中白名单以外的一切端口"></a>4、禁止除表中白名单以外的一切端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iptables -p INPUT DROP</div><div class="line">iptables -p FORWARD DROP</div><div class="line">iptables -p OUTPUT DROP</div></pre></td></tr></table></figure>
-<h4 id="5、保存规则并重启iptables"><a href="#5、保存规则并重启iptables" class="headerlink" title="5、保存规则并重启iptables"></a>5、保存规则并重启iptables</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service iptables save</div><div class="line">service iptables restart</div></pre></td></tr></table></figure>
-<p><strong>注：也可以修改iptables规则表文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vi /etc/sysconfig/iptables</div><div class="line">#清除所有规则</div><div class="line">iptables -F</div><div class="line">iptables -X</div></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Linux/">操作系统</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/服务器/">服务器</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a  href="/2017/07/24/hello-world/" class="article-date">
-      <time datetime="2017-07-24T09:00:52.000Z" itemprop="datePublished">2017-07-24</time>
-</a>
-
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <a  href="/2017/07/26/生活/" title="下一篇: 关于生活的一些态度">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
-  
-    <h1 itemprop="name">
-      <a  class="article-title" href="/2017/07/24/hello-world/">Welcome to my site!</a>
-    </h1>
-  
-
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/other/">其它</a>
-    </div>
-
-
-      
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/其它/">扒一扒我搭建Hexo的一些坑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/生活/">关于生活的一些态度</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/升级PHP7/">升级PHP7</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/26/linux/">简单的linux防火墙配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/24/hello-world/">Welcome to my site!</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
 
 
 
 
-  
-  
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">

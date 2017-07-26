@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Mosagx</title>
+  <title>Mosagx blog</title>
   <subtitle>面向工资工程师</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-07-24T09:00:52.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://www.saway.cc/"/>
+  <updated>2017-07-26T07:22:27.000Z</updated>
+  <id>http://www.saway.cc/</id>
   
   <author>
     <name>Mosagx</name>
@@ -16,11 +16,149 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2017/07/24/hello-world/"/>
-    <id>http://yoursite.com/2017/07/24/hello-world/</id>
+    <title>扒一扒我搭建Hexo的一些坑</title>
+    <link href="http://www.saway.cc/2017/07/26/%E5%85%B6%E5%AE%83/"/>
+    <id>http://www.saway.cc/2017/07/26/其它/</id>
+    <published>2017-07-26T04:17:34.000Z</published>
+    <updated>2017-07-26T07:22:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="一-先从环境搭建说起吧"><a href="#一-先从环境搭建说起吧" class="headerlink" title="一. 先从环境搭建说起吧"></a>一. 先从环境搭建说起吧</h2><p>搭建模式为Hexo + <strong>GitHub Pages</strong><br><strong>这里强调github pages 后面会提到这个坑</strong><br>本地操作系统是MacOSX的，windows平台类似，换汤不换药</p>
+<ol>
+<li>先安装Node.js，便于后面的npm操作，教程网上一大堆，Mac下一行命令搞定，配环境变量也省了<br><code>$ brew install node</code></li>
+<li>然后安装Hexo，基于Node.js安装<br><code>$ npm install -g hexo</code></li>
+<li><p>进入自己的项目文件夹（没有就建一个），这里已blog为例  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ cd blog  </div><div class="line">$ hexo init</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置github远程仓库<br>在GitHub上新建project，然后将本地公钥加进去，具体自行Google，这里就不做解释了。<br><strong>上述操作中，如出现‘xxx command not foubd’类似的提示 注意检查环境变量和语法格式</strong>  </p>
+</li>
+</ol>
+<h2 id="二-连接远程仓库"><a href="#二-连接远程仓库" class="headerlink" title="二. 连接远程仓库"></a>二. 连接远程仓库</h2><ol>
+<li><p><strong>publickey permission denied：</strong><br>这种问题出现的比较多，情况也比复杂，这里就说说Mac下的吧，我这里是多git账户多情况下出现的这种情况，由于开发需求，有公司的gitlab项目，也有自己私人的github项目，在配置正确的情况下会出现公钥不识别，这就涉及到私钥配对的问题了：</p>
+<ul>
+<li>先说密钥生成。<br><code>$ ssh-keygen -t rsa -b 4096 -C &quot;user@domain.com&quot;</code><br>这里的邮箱记得填你GitHub的账户邮箱，避免出现一些未知错误</li>
+<li>查看已添加的私钥列表。<br><code>$ ssh-add -l</code></li>
+<li>查看ssh-agent pid<br><code>$ eval &quot;$(ssh-agent -s)&quot;</code><br>这个主要是看ssh相关的跑起来没</li>
+<li>清空私钥列.<br><code>$ ssh-add -D</code></li>
+<li>添加项目对应的私钥.<br><code>$ ssh-add ~/.ssh/github_blog</code></li>
+<li>测试连接<br><code>$ ssh -Tv github.me</code><br>这里的github.me是我自己多账户下设置的hostname，关于ssh的config配置文件，如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">  Host github.me</div><div class="line">HostName 	GitHub.com</div><div class="line">User 		git</div><div class="line">AddKeysToAgent 	yes</div><div class="line">UseKeychain 	yes</div><div class="line">IdentityFile 	~/.ssh/github_blog</div><div class="line">  </div><div class="line">  #面配置hexo全局配置文件(项目根目录下的_config.yml)</div><div class="line"> </div><div class="line">  deploy:</div><div class="line"> 	type: git  #新版本的注意这里是git，不是github  </div><div class="line"> 	#username换成自己的github用户名，后面是项目名.git</div><div class="line"> 	repository: git@username.com:username/blog.git</div><div class="line"> 	branch: master</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置插件</strong>  </p>
+<pre><code>$ npm install hexo-generator-feed --save  
+$ npm install hexo-generator-sitemap --save  
+$ npm install hexo-generator-baidu-sitemap --save  
+$ npm install hexo-generator-search --save
+</code></pre></li>
+<li><strong>生成静态页面</strong><br><code>$ hexo generate</code><br>或者<br><code>$ hexo g</code><br>出错的话，记得后面加’–debug’参数查看详细信息  <h2 id="三-提交代码"><a href="#三-提交代码" class="headerlink" title="三. 提交代码"></a>三. 提交代码</h2><strong>提交到github服务器</strong><br><code>$ hexo deploy</code><br>或者<br><code>$ hexo d</code></li>
+</ol>
+<h2 id="四-配置网页"><a href="#四-配置网页" class="headerlink" title="四. 配置网页"></a>四. 配置网页</h2><p>  <strong>这里就谈谈前面说到的github pages的坑：</strong><br>  由于网上的帖子都说配好io直接访问就行了，我试了好久，页面就是出不来，提示找不到服务器，后面翻了翻文档，才看到GitHub Pages这个设置<br>  打开github页面setting-&gt;GitHub Pages<br>  选择你的分枝，默认为master主分枝就ok了<br>  访问user.github.io/blog／就能看到你的项目页面了<br>  初次可能会出现样式出不来，头像加载不出等问题，原因是我们的_config.yml设置的root是’/‘而项目的/对应你的io，访问／blog的时候样式就会出现路径不对的问题，我直接绑域名就解决了  </p>
+<h2 id="五-绑定域名"><a href="#五-绑定域名" class="headerlink" title="五. 绑定域名"></a>五. 绑定域名</h2><p>  到这一步就比较简单了，在自己的域名控制台解析一个CNAME到你的io，然后打开github的setting，在GitHub Pages里填入你解析道域名即可，此时，你会看见你的项目里出现一个CNAME文件，将其下载下来，放到你本地的模板目录下的resource下，不然每次deploy都要绑一次。<br>  <strong>– 先就这些吧</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;一-先从环境搭建说起吧&quot;&gt;&lt;a href=&quot;#一-先从环境搭建说起吧&quot; class=&quot;headerlink&quot; title=&quot;一. 先从环境搭建说起吧&quot;&gt;&lt;/a&gt;一. 先从环境搭建说起吧&lt;/h2&gt;&lt;p&gt;搭建模式为Hexo + &lt;strong&gt;GitHub Pages
+    
+    </summary>
+    
+      <category term="其它" scheme="http://www.saway.cc/categories/other/"/>
+    
+    
+      <category term="杂记" scheme="http://www.saway.cc/tags/%E6%9D%82%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于生活的一些态度</title>
+    <link href="http://www.saway.cc/2017/07/26/%E7%94%9F%E6%B4%BB/"/>
+    <id>http://www.saway.cc/2017/07/26/生活/</id>
+    <published>2017-07-26T04:17:28.000Z</published>
+    <updated>2017-07-26T04:24:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="先就这样吧-以后再写"><a href="#先就这样吧-以后再写" class="headerlink" title="先就这样吧-以后再写"></a>先就这样吧-以后再写</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;先就这样吧-以后再写&quot;&gt;&lt;a href=&quot;#先就这样吧-以后再写&quot; class=&quot;headerlink&quot; title=&quot;先就这样吧-以后再写&quot;&gt;&lt;/a&gt;先就这样吧-以后再写&lt;/h2&gt;
+    
+    </summary>
+    
+      <category term="生活" scheme="http://www.saway.cc/categories/life/"/>
+    
+    
+      <category term="杂记" scheme="http://www.saway.cc/tags/%E6%9D%82%E8%AE%B0/"/>
+    
+      <category term="态度" scheme="http://www.saway.cc/tags/%E6%80%81%E5%BA%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>升级PHP7</title>
+    <link href="http://www.saway.cc/2017/07/26/%E5%8D%87%E7%BA%A7PHP7/"/>
+    <id>http://www.saway.cc/2017/07/26/升级PHP7/</id>
+    <published>2017-07-26T04:14:50.000Z</published>
+    <updated>2017-07-26T04:24:03.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1）更新yum源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rpm -Uvh https://mirror.webtatic.com/yum/el6/latest.rpm</div></pre></td></tr></table></figure></p>
+<p>2）卸载原有的PHP<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum remove php* php-common​</div></pre></td></tr></table></figure></p>
+<p>3）安装PHP7<br><strong>新版本具体看list里面的</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">yum install php70w​</div><div class="line">yum install php70w-gd php70w-mbstring php70w-mysql</div></pre></td></tr></table></figure></p>
+<p>4）查看php信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">php -v</div><div class="line">PHP 7.0.10 (cli) (built: Aug 20 2016 08:13:48) ( NTS )</div><div class="line">Copyright (c) 1997-2016 The PHP Group</div><div class="line">Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1）更新yum源&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;
+    
+    </summary>
+    
+      <category term="编程" scheme="http://www.saway.cc/categories/programming/"/>
+    
+    
+      <category term="Linux" scheme="http://www.saway.cc/tags/Linux/"/>
+    
+      <category term="PHP" scheme="http://www.saway.cc/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>简单的linux防火墙配置</title>
+    <link href="http://www.saway.cc/2017/07/26/linux/"/>
+    <id>http://www.saway.cc/2017/07/26/linux/</id>
+    <published>2017-07-26T03:17:45.000Z</published>
+    <updated>2017-07-26T03:45:47.000Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="1、查看端口状态"><a href="#1、查看端口状态" class="headerlink" title="1、查看端口状态"></a>1、查看端口状态</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">netstat -tnl</div></pre></td></tr></table></figure>
+<h4 id="2、查看防火墙规则"><a href="#2、查看防火墙规则" class="headerlink" title="2、查看防火墙规则"></a>2、查看防火墙规则</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -L -n</div></pre></td></tr></table></figure>
+<h4 id="3、添加端口白名单"><a href="#3、添加端口白名单" class="headerlink" title="3、添加端口白名单"></a>3、添加端口白名单</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">//以80端口为例</div><div class="line">iptables -A INPUT -p tcp --dport 80 -j ACCEPT</div><div class="line">iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT</div></pre></td></tr></table></figure>
+<h4 id="4、禁止除表中白名单以外的一切端口"><a href="#4、禁止除表中白名单以外的一切端口" class="headerlink" title="4、禁止除表中白名单以外的一切端口"></a>4、禁止除表中白名单以外的一切端口</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">iptables -p INPUT DROP</div><div class="line">iptables -p FORWARD DROP</div><div class="line">iptables -p OUTPUT DROP</div></pre></td></tr></table></figure>
+<h4 id="5、保存规则并重启iptables"><a href="#5、保存规则并重启iptables" class="headerlink" title="5、保存规则并重启iptables"></a>5、保存规则并重启iptables</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">service iptables save</div><div class="line">service iptables restart</div></pre></td></tr></table></figure>
+<p><strong>注：也可以修改iptables规则表文件</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">vi /etc/sysconfig/iptables</div><div class="line">#清除所有规则</div><div class="line">iptables -F</div><div class="line">iptables -X</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;1、查看端口状态&quot;&gt;&lt;a href=&quot;#1、查看端口状态&quot; class=&quot;headerlink&quot; title=&quot;1、查看端口状态&quot;&gt;&lt;/a&gt;1、查看端口状态&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
+    
+    </summary>
+    
+      <category term="操作系统" scheme="http://www.saway.cc/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://www.saway.cc/tags/Linux/"/>
+    
+      <category term="服务器" scheme="http://www.saway.cc/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+      <category term="操作系统" scheme="http://www.saway.cc/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Welcome to my site!</title>
+    <link href="http://www.saway.cc/2017/07/24/hello-world/"/>
+    <id>http://www.saway.cc/2017/07/24/hello-world/</id>
     <published>2017-07-24T09:00:52.000Z</published>
-    <updated>2017-07-24T09:00:52.000Z</updated>
+    <updated>2017-07-26T04:22:59.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -38,6 +176,8 @@
       &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
     
     </summary>
+    
+      <category term="其它" scheme="http://www.saway.cc/categories/other/"/>
     
     
   </entry>
