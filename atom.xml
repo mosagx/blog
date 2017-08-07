@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Mosagx blog</title>
-  <subtitle>面向大海工程师</subtitle>
+  <subtitle>如果感到幸福你就php</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.saway.cc/"/>
